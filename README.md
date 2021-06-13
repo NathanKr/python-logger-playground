@@ -17,7 +17,7 @@ Here the root logger is defined and module utils1 and utils2 use it to write to 
 The setup of logger_per_module allow full flexibility :
 <ul>
 <li>Send all modules logs to root</li>
-<li>Send each module log to its log</li>
+<li>Send each module log to its log file</li>
 <li>Mix of the above</li>
 </ul>
 
