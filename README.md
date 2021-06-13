@@ -13,3 +13,13 @@ Here the root logger is defined and module utils1 and utils2 use it to write to 
 </ul>
 
 
+<h2>Full flexibility setup</h2>
+The setup of logger_per_module allow full flexibility :
+<ul>
+<li>Send all modules logs to root</li>
+<li>Send each module log to its log</li>
+<li>Mix of the above</li>
+</ul>
+
+And what if we want to see in root log just part of the log , we simply set these module log level to e,g, Warning or error , this is easy by putting this in config.py
+
