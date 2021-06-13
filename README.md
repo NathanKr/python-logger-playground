@@ -21,5 +21,5 @@ The setup of logger_per_module allow full flexibility :
 <li>Mix of the above</li>
 </ul>
 
-And what if we want to see in root log just part of the log , we simply set these module log level to e,g, Warning or error , this is easy by putting this in config.py
+And what if we want to see in root log just part of the modules log , we simply set these module log level to e.g. Warning or Error , this is easy by putting this in config.py
 
