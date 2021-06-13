@@ -10,6 +10,6 @@ logging.basicConfig(
     format='logger name : %(name)s , %(levelname)s , func : %(funcName)s , %(message)s , module : %(module)s ,line :  %(lineno)d , %(asctime)s'  
                     )  # log record format
 
-print(f'write log to file : {LOG_FILE_NAME}')
+
 print(add(1,2.3))
 print(sub(4,5))
