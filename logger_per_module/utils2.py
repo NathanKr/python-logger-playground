@@ -1,9 +1,9 @@
-import logging
+from config import UTILS1_LOGLEVEL
 from log_utils import get_module_logger
 
 
 formatter = 'logger name : %(name)s ,%(levelname)s , func : %(funcName)s , %(message)s , module : %(module)s ,line :  %(lineno)d , %(asctime)s'
-logger = get_module_logger(__name__,logging.DEBUG,formatter)
+logger = get_module_logger(__name__,UTILS1_LOGLEVEL,formatter)
 
 
 def sub(num1 : float,num2 : float)->float:
