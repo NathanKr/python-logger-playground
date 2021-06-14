@@ -24,4 +24,4 @@ The setup of logger_per_module allow full flexibility :
 And what if we want to see in root log just part of the modules log , we simply set these module log level to e.g. Warning or Error , this is easy by putting this in config.py
 
 <h2>log utils</h2>
-i have added in log_utils directory a small helper function called args_to_string which can be used to preaty print the function argument. you can use it with logger
+i have added in log_utils directory a small helper function called args_to_string which can be used to preaty print the function arguments. you can use it with logger
