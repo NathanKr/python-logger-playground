@@ -7,7 +7,7 @@ def foo(num1,num2):
 SEP = '\n'
 
 def args_to_string(**kwargs)->str:
-        args_as_string=''
+        args_as_string=SEP
         index=0
         for key,value in kwargs.items():
             formated_value = pformat(value)
