@@ -25,3 +25,6 @@ And what if we want to see in root log just part of the modules log , we simply 
 
 <h2>log utils</h2>
 i have added in log_utils directory a small helper function called args_to_string which can be used to preaty print the function arguments. you can use it with logger
+
+<h2>structure logs</h2>
+consider use a known format like json because its more readable. check <a href='https://www.youtube.com/watch?v=4Y3VdS2pLF4'>here</a>
