@@ -16,7 +16,7 @@ def configure_root_logger():
 
 
 
-def get_logger_with_file_handler(module_name : str, log_level : int,formatter : str)->logging.Logger:
+def get_logger_with_file_handler(module_name : str, log_level : int,formatter : str,)->logging.Logger:
     """
         get logger with file handler
         the log file is the same as the module name with extension .log
@@ -40,8 +40,8 @@ def get_logger_with_file_handler(module_name : str, log_level : int,formatter : 
         file_name = module_name
 
     
-    log_name = os.path.join('logs',f'{file_name}.log')
-    file_handler = logging.FileHandler(log_name)
+    log_path = os.path.join('logs',f'{file_name}.log')
+    file_handler = logging.FileHandler(filename=log_path,encoding='utf-8')
 
     oFormatter = logging.Formatter(formatter)
     file_handler.setFormatter(oFormatter)
