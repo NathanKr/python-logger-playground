@@ -20,7 +20,6 @@ The setup of logger_per_module allow full flexibility :
 <li>Send each module log to its log file</li>
 <li>Mix of the above</li>
 </ul>
-
 And what if we want to see in root log just part of the modules log , we simply set these module log level to e.g. Warning or Error , this is easy by putting this in config.py
 
 <h2>log utils</h2>

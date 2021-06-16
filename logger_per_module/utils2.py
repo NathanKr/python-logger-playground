@@ -1,5 +1,5 @@
-from config import UTILS2_LOGLEVEL
-from log_utils import get_module_logger
+from .config import UTILS2_LOGLEVEL
+from log_utils.utils import get_module_logger
 
 
 formatter = 'logger name : %(name)s ,%(levelname)s , func : %(funcName)s , %(message)s , module : %(module)s ,line :  %(lineno)d , %(asctime)s'

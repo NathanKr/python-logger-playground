@@ -1,17 +1,54 @@
 from pprint import pformat
-from typing import List
-import pandas as pd
+import logging
+import os
 
-def sum2(num1,num2):
-    print(args_to_string(n1=num1,n2=num2))
-    return num1+num2
+def configure_root_logger():
+    """
+        i prefer to use this a not logging.basicConfig because this is more flexiable
+        e.g. in term of controlling encoding of the log file
+    """
+    module_name=None # root
+    log_level = logging.DEBUG # default of level for root is WARNING
+    formatter = 'logger name : %(name)s , %(levelname)s , func : %(funcName)s , %(message)s , module : %(module)s ,line :  %(lineno)d , %(asctime)s' 
 
-def sum_list(list : List[int]):
-    print(args_to_string(list = list))
-    return sum(list)
+     # no need to use the return , it is accessed by logging
+    get_module_logger(module_name,log_level,formatter)
 
-def foo(df : pd.DataFrame):
-    print(args_to_string(df = df))
+
+
+def get_module_logger(module_name : str, log_level : int,formatter : str)->logging.Logger:
+    """
+        get logger with file handler
+        the log file is the same as the module name with extension .log
+
+    Args:
+        module_name (str): pass here__name__
+        log_level (int): pass here e.g. logger.DEBUG
+        formatter (str): pass here e.g. 'logger name : %(name)s , %(levelname)s,
+                                        func : %(funcName)s , %(message)s , module : %(module)s ,
+                                        line :  %(lineno)d , %(asctime)s'  
+
+    Returns:
+        logging.Logger: [description]
+    """
+    logger = logging.getLogger(module_name) # use with module_name
+    logger.setLevel(log_level) # e.g logging.DEBUG
+
+    if module_name == None:
+        file_name = 'root'
+    else:
+        file_name = module_name
+
+    
+    log_name = os.path.join('logs',f'{file_name}.log')
+    file_handler = logging.FileHandler(log_name)
+
+    oFormatter = logging.Formatter(formatter)
+    file_handler.setFormatter(oFormatter)
+    logger.addHandler(file_handler)
+
+    return logger
+
 
 SEP = '\n'
 def args_to_string(**kwargs)->str:
@@ -24,10 +61,3 @@ def args_to_string(**kwargs)->str:
 
         return args_as_string     
 
-df = pd.DataFrame([[1, 2, 3, 4], [4, 5, 6 , 7], [7, 8, 9 , 10]],
-                  columns=['col1', 'col2', 'col3' , 'col4'])
-
-
-sum2(1,2)
-sum_list([1,2,3])
-foo(df)
