@@ -12,11 +12,11 @@ def configure_root_logger():
     formatter = 'logger name : %(name)s , %(levelname)s , func : %(funcName)s , %(message)s , module : %(module)s ,line :  %(lineno)d , %(asctime)s' 
 
      # no need to use the return , it is accessed by logging
-    get_module_logger(module_name,log_level,formatter)
+    get_logger_with_file_handler(module_name,log_level,formatter)
 
 
 
-def get_module_logger(module_name : str, log_level : int,formatter : str)->logging.Logger:
+def get_logger_with_file_handler(module_name : str, log_level : int,formatter : str)->logging.Logger:
     """
         get logger with file handler
         the log file is the same as the module name with extension .log
