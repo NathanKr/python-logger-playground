@@ -4,7 +4,7 @@ import os
 
 def configure_root_logger():
     """
-        i prefer to use this a not logging.basicConfig because this is more flexiable
+        i prefer to use this instead of logging.basicConfig because this is more flexiable
         e.g. in term of controlling encoding of the log file
     """
     module_name=None # root
